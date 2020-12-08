@@ -1,0 +1,105 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+.grid > div {
+  background: black;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+.grid > div::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
+.grid > div img {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+body {
+  margin: 2rem;
+}
+
+.grid div .border {
+  border-style: solid;
+  border-color: white;
+  height: 208px;
+}
+
+.grid div #about:hover {
+  content: url("https://i.ibb.co/nMnLxQd/about-1.png");
+  border-style: none;
+}
+
+.grid div #skill:hover {
+  content: url("https://i.ibb.co/6ZL0GQg/lang.png");
+  background-color: black;
+  border-style: none;
+  height: 180px;
+}
+
+.grid div #port1:hover {
+  content: url("https://i.ibb.co/QMWcscV/port.png");
+  background-color: black;
+  border-style: none;
+  height: 210px;
+  width: 195px;
+}
+
+footer {
+  color: gray;
+}
+
+@media screen and (min-width: 924px) {
+  * {
+    background: yellow;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 923px) {
+  * {
+    background-color: black;
+  }
+}
+@media only screen and (max-width: 708px) {
+  * {
+    background-color: red;
+  }
+
+  .grid div #red {
+    content: url("https://i.ibb.co/2cTvB1P/yellow.jpg");
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .grid #port {
+    margin-left: 45%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 493px) {
+  * {
+    background-color: yellow;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .grid #port {
+    margin: auto;
+    width: 92%;
+  }
+}
